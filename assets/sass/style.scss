@@ -1,0 +1,30 @@
+@import 'variables';
+
+body{
+    background-color: $bg-color;
+    font-family: 'Verdana', sans-serif;
+    padding-inline: 30px;
+}
+h1{
+    border-bottom: solid 2px #0000003c;
+    line-height: 50px;
+}
+nav{
+    a{
+        color: #0e72cf;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.3s;
+        &:hover{
+            color:#05325b
+        }
+        &:after{
+            content: ' -';
+        }
+        &:last-child{
+            &:after{
+                content: '';
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+body {
+  background-color: #f0f8ff;
+  font-family: "Verdana", sans-serif;
+  padding-inline: 30px;
+}
+
+h1 {
+  border-bottom: solid 2px rgba(0, 0, 0, 0.2352941176);
+  line-height: 50px;
+}
+
+nav a {
+  color: #0e72cf;
+  font-weight: 600;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #05325b;
+}
+nav a:after {
+  content: " -";
+}
+nav a:last-child:after {
+  content: "";
+}/*# sourceMappingURL=style.css.map */
