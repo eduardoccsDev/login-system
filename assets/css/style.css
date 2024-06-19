@@ -2,6 +2,7 @@ body {
   background-color: #f0f8ff;
   font-family: "Verdana", sans-serif;
   padding-inline: 30px;
+  margin: 0px;
 }
 
 h1 {
@@ -24,4 +25,58 @@ nav a:after {
 }
 nav a:last-child:after {
   content: "";
+}
+
+.sec-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+.sec-login form {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 300px;
+}
+.sec-login form h3 {
+  text-align: center;
+}
+.sec-login form > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.sec-login form button[type=submit] {
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: #3498db;
+  border: solid 1px #3498db;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.sec-login form button[type=submit]:hover {
+  background-color: #0b5c92;
+}
+.sec-login form .error {
+  color: rgb(157, 26, 26);
+  background-color: rgb(253, 191, 191);
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
