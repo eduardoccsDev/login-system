@@ -59,6 +59,12 @@ nav a:last-child:after {
   gap: 10px;
   margin-bottom: 20px;
 }
+.sec-login form > div input {
+  height: 20px;
+  border: solid 1px #3498db;
+  border-radius: 5px;
+  padding-inline: 5px;
+}
 .sec-login form button[type=submit] {
   cursor: pointer;
   padding: 8px 10px;

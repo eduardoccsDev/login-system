@@ -37,11 +37,11 @@
             <h3>Login</h3>
             <div>
                 <label for="user">User:</label>
-                <input type="email" name="user" id="user">
+                <input type="email" name="user" id="user" placeholder="example@example.com">
             </div>
             <div>
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password">
+                <input type="password" name="password" id="password" placeholder="********">
             </div>
             <div>
                 <button type="submit">Login</button>

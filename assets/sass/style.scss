@@ -46,7 +46,13 @@ nav{
             display: flex;
             flex-direction: column;
             gap: 10px;
-            margin-bottom: 20px;   
+            margin-bottom: 20px;
+            input{
+                height: 20px;
+                border: solid 1px $primary-color;
+                border-radius: 5px;
+                padding-inline: 5px;
+            }   
         }
         button[type='submit']{
             cursor: pointer;
@@ -70,4 +76,3 @@ nav{
         }
     }
 }
-
