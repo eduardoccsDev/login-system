@@ -5,8 +5,9 @@
 <html lang="en">
 <?php $pageTitle = 'Home'; require '../components/customHead.php'; ?>
 <body>
-    <h1>Home</h1>
     <?php require 'nav.php' ?>
-
+    <div class="container">
+        <h1>Home</h1>
+    </div>
 </body>
 </html>

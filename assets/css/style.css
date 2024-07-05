@@ -1,8 +1,12 @@
 body {
   background-color: #f0f8ff;
   font-family: "Verdana", sans-serif;
-  padding-inline: 30px;
   margin: 0px;
+}
+
+.container {
+  max-width: 1236px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -10,21 +14,48 @@ h1 {
   line-height: 50px;
 }
 
-nav a {
+.userInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  padding: 5px 20px;
+  background-color: #3498db;
+  color: #fff;
+  gap: 5px;
+}
+.userInfo p {
+  margin: 0;
+  font-size: 14px;
+}
+
+nav {
+  background-color: #fff;
+  padding: 5px 20px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2705882353);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2705882353);
+}
+nav .routers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  gap: 10px;
+}
+nav .routers a {
   color: #0e72cf;
   font-weight: 600;
   text-decoration: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-nav a:hover {
+nav .routers a:hover {
   color: #05325b;
-}
-nav a:after {
-  content: " -";
-}
-nav a:last-child:after {
-  content: "";
+  text-decoration: underline;
 }
 
 .sec-login {
@@ -44,6 +75,8 @@ nav a:last-child:after {
   background-color: #fff;
   border-radius: 10px;
   width: 300px;
+  -webkit-box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1098039216);
+          box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1098039216);
 }
 .sec-login form h3 {
   text-align: center;
