@@ -1,7 +1,3 @@
-<?php
-    defined('CONTROL') or die('Access denied');
-?>
-
 <section class="userInfo">
     <p>Wellcome! <span><strong><?= $_SESSION['userName'] ?></strong></span></p>
 </section>

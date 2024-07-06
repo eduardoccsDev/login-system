@@ -8,6 +8,25 @@ body {
   max-width: 1236px;
   margin: 0 auto;
 }
+.container table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.container table td, .container table th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+.container table tr:first-child {
+  background-color: #3498db !important;
+  color: #fff;
+}
+.container table tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.container table tr:nth-child(odd) {
+  background-color: #fff;
+}
 
 h1 {
   border-bottom: solid 2px rgba(0, 0, 0, 0.2352941176);

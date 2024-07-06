@@ -8,6 +8,25 @@ body{
 .container{
     max-width: 1236px;
     margin: 0 auto;
+    table{
+        border-collapse: collapse;
+        width: 100%;
+        td, th{
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        tr:first-child{
+            background-color: $primary-color !important;
+            color:#fff;
+        }
+        tr:nth-child(even){
+            background-color: #dddddd;
+        }
+        tr:nth-child(odd){
+            background-color: #fff;
+        }
+    }
 }
 h1{
     border-bottom: solid 2px #0000003c;

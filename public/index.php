@@ -7,11 +7,19 @@ session_start();
 
 require_once '../app/Models/Database.php';
 require_once '../app/Models/User.php';
+require_once '../app/Models/Professor.php';
 require_once '../app/Controllers/HomeController.php';
 require_once '../app/Controllers/LoginController.php';
+require_once '../app/Controllers/LogoutController.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
+use App\Controllers\LogoutController;
+
+if (!isset($_SESSION['userId']) && $_GET['router'] !== 'login') {
+    header('Location: index.php?router=login');
+    exit;
+}
 
 $router = $_GET['router'] ?? 'login';
 
@@ -28,8 +36,10 @@ switch ($router) {
             $controller->index();
         }
         break;
-    // Adicionar outros casos conforme necessário
-    default:
-        echo 'Access denied';
+    case 'logout':
+        $controller = new LogoutController();
+        $controller->index();
         break;
+    default:
+        die("Access denied: Rota '$router' não reconhecida.");
 }

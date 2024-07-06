@@ -1,8 +1,6 @@
-<?php defined('CONTROL') or die('Access denied'); ?>
-
 <!DOCTYPE html>
 <html lang="en">
-<?php $pageTitle = 'Login'; require 'components/customHead.php'; ?>
+<?php $pageTitle = 'Login'; require '../components/customHead.php'; ?>
 <body>
     <section class="sec-login">
         <form action="index.php?router=login" method="post">
