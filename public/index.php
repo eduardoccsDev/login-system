@@ -2,51 +2,34 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-// Initial section
+
 session_start();
 
-// Const control
-define('CONTROL', true);
+require_once '../app/Models/Database.php';
+require_once '../app/Models/User.php';
+require_once '../app/Controllers/HomeController.php';
+require_once '../app/Controllers/LoginController.php';
 
-// Include the Database and User classes
-require_once '../inc/Database.php';
-require_once '../inc/User.php';
+use App\Controllers\HomeController;
+use App\Controllers\LoginController;
 
-// Create a new Database instance and connect
-$database = new Database();
-$db = $database->connect();
+$router = $_GET['router'] ?? 'login';
 
-// Create a new User instance
-$userClass = new User($db);
-
-// Check logged user
-$user_logged = $_SESSION['userId'] ?? null;
-$user_name = $_SESSION['userName'] ?? null;
-
-// Check router
-if (empty($user_logged)) {
-    $router = 'login';
-} else {
-    $router = $_GET['router'] ?? 'home';
+switch ($router) {
+    case 'home':
+        $controller = new HomeController();
+        $controller->index();
+        break;
+    case 'login':
+        $controller = new LoginController();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->authenticate();
+        } else {
+            $controller->index();
+        }
+        break;
+    // Adicionar outros casos conforme necessário
+    default:
+        echo 'Access denied';
+        break;
 }
-
-// Check user logged, go to home
-if (!empty($user_logged) && $router == 'login') {
-    $router = 'home';
-}
-
-// Analyze routers
-$routers = [
-    'login' => 'login.php',
-    'home' => 'home.php',
-    'about' => 'about.php',
-    'contact' => 'contact.php',
-    'logout' => 'logout.php',
-];
-
-if (!key_exists($router, $routers)) {
-    die('Access denied');
-}
-
-// Include the requested router file
-require_once $routers[$router];
