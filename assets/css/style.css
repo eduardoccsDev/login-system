@@ -3,6 +3,9 @@ body {
   font-family: "Verdana", sans-serif;
   margin: 0px;
 }
+body.no-scroll {
+  overflow: hidden;
+}
 
 .container {
   max-width: 1236px;
@@ -193,4 +196,60 @@ nav .routers a:hover {
 }
 .quickLinks__card p {
   margin: 0;
+}
+
+.managementConfigs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.managementConfigs button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: solid 1px;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.managementConfigs button:hover {
+  background-color: #0b5c92;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+}
+.popup .close-btn {
+  display: block;
+  margin: 10px auto 0;
+  padding: 5px 10px;
+  background: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
 }/*# sourceMappingURL=style.css.map */
