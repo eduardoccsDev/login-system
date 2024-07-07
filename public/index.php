@@ -11,10 +11,15 @@ require_once '../app/Models/Professor.php';
 require_once '../app/Controllers/HomeController.php';
 require_once '../app/Controllers/LoginController.php';
 require_once '../app/Controllers/LogoutController.php';
+require_once '../app/Controllers/ProfessorController.php';
+require_once '../app/Controllers/UserController.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\LogoutController;
+use App\Controllers\ProfessorController;
+use App\Controllers\UserController;
+
 
 if (!isset($_SESSION['userId']) && $_GET['router'] !== 'login') {
     header('Location: index.php?router=login');
@@ -38,6 +43,14 @@ switch ($router) {
         break;
     case 'logout':
         $controller = new LogoutController();
+        $controller->index();
+        break;
+    case 'professor':
+        $controller = new ProfessorController();
+        $controller->index();
+        break;
+    case 'user':
+        $controller = new UserController();
         $controller->index();
         break;
     default:

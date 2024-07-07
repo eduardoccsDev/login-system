@@ -49,4 +49,11 @@ class User {
         }
         return false;
     }
+    //call all users
+    public function getAllUsers() {
+        $query = "SELECT * FROM $this->table";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt;
+    }
 }

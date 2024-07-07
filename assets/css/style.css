@@ -27,6 +27,14 @@ body {
 .container table tr:nth-child(odd) {
   background-color: #fff;
 }
+.container table td .active {
+  color: #46c346;
+  font-size: 20px;
+}
+.container table td .disabled {
+  color: red;
+  font-size: 20px;
+}
 
 h1 {
   border-bottom: solid 2px rgba(0, 0, 0, 0.2352941176);
@@ -137,4 +145,52 @@ nav .routers a:hover {
   text-align: center;
   padding: 8px 10px;
   border-radius: 5px;
+}
+
+.quickLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.quickLinks__card {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  padding: 10px 15px;
+  border: 1px solid #3498db;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2705882353);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2705882353);
+  min-width: 250px;
+}
+.quickLinks__card__title {
+  font-weight: 600;
+}
+.quickLinks__card__description {
+  font-style: italic;
+  color: #9c9c9c;
+}
+.quickLinks__card__router {
+  text-decoration: none;
+  color: #fff;
+  background-color: #3498db;
+  padding: 5px 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.quickLinks__card__router:hover {
+  background-color: #0b5c92;
+}
+.quickLinks__card p {
+  margin: 0;
 }/*# sourceMappingURL=style.css.map */
