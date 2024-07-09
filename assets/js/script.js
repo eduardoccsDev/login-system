@@ -12,7 +12,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Cria o conteúdo do popup
         var popupContent = document.createElement('div');
-        popupContent.innerHTML = '<p>Este é o conteúdo do popup</p>';
+        popupContent.innerHTML = `
+                <h2>Add a new professor</h2>
+                <form class="schoolForm__professor" action="index.php?router=professor&action=add" method="post">
+                    <div>
+                        <label for="professorName">Name:</label>
+                        <input type="text" id="professorName" name="professorName" placeholder="Ex: Jonh Norris">
+                    </div>
+                    <div>
+                        <label for="professorEmail">Email:</label>
+                        <input type="email" id="professorEmail" name="professorEmail" placeholder="Ex: jonh_norris@gmail.com">
+                    </div>
+                    <div>
+                        <button type="submit">Add</button>
+                    </div>
+                </form>
+            `;
 
         // Cria o botão de fechar
         var closeButton = document.createElement('button');

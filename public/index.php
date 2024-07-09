@@ -27,6 +27,7 @@ if (!isset($_SESSION['userId']) && $_GET['router'] !== 'login') {
 }
 
 $router = $_GET['router'] ?? 'login';
+$action = $_GET['action'] ?? 'index';
 
 switch ($router) {
     case 'home':
@@ -47,7 +48,11 @@ switch ($router) {
         break;
     case 'professor':
         $controller = new ProfessorController();
-        $controller->index();
+        if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->add();
+        } else {
+            $controller->index();
+        }
         break;
     case 'user':
         $controller = new UserController();

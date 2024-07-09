@@ -15,6 +15,7 @@
                 <th>Email</th>
                 <th>Status</th>
                 <th>Creation date</th>
+                <th>Actions</th>
             <tr>
             <?php while ($row = $professors->fetch(PDO::FETCH_ASSOC)): ?>
                 <tr>
@@ -23,6 +24,10 @@
                     <td><?= $row['professorEmail']; ?></td>
                     <td><?= ($row['professorStatus'] == 1) ? 'Active <span class="active">•</span>' : 'Disabled <span class="disabled">•</span>'; ?></td>
                     <td><?= date('d-m-Y', strtotime($row['professorCreationDate'])); ?></td>
+                    <td>
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </td>
                 </tr>
             <?php endwhile; ?>
         </table>

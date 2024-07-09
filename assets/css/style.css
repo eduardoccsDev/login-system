@@ -15,7 +15,8 @@ body.no-scroll {
   border-collapse: collapse;
   width: 100%;
 }
-.container table td, .container table th {
+.container table td,
+.container table th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -242,6 +243,9 @@ nav .routers a:hover {
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   z-index: 1001;
 }
+.popup h2 {
+  text-align: center;
+}
 .popup .close-btn {
   display: block;
   margin: 10px auto 0;
@@ -252,4 +256,53 @@ nav .routers a:hover {
   cursor: pointer;
   border-radius: 5px;
   font-size: 16px;
+}
+.popup .schoolForm__professor {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 300px;
+  -webkit-box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1098039216);
+          box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1098039216);
+}
+.popup .schoolForm__professor h3 {
+  text-align: center;
+}
+.popup .schoolForm__professor > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.popup .schoolForm__professor > div input {
+  height: 20px;
+  border: solid 1px #3498db;
+  border-radius: 5px;
+  padding-inline: 5px;
+}
+.popup .schoolForm__professor button[type=submit] {
+  cursor: pointer;
+  padding: 8px 10px;
+  background-color: #3498db;
+  border: solid 1px #3498db;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.popup .schoolForm__professor button[type=submit]:hover {
+  background-color: #0b5c92;
+}
+.popup .schoolForm__professor .error {
+  color: rgb(157, 26, 26);
+  background-color: rgb(253, 191, 191);
+  text-align: center;
+  padding: 8px 10px;
+  border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
