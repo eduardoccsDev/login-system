@@ -5,6 +5,9 @@
     <?php require '../components/nav.php' ?>
     <div class="container">
         <h1>User management</h1>
+        <div class="managementConfigs">
+            <button id="addNew" data-popup="user" class="managementConfigs__add">Add a new</button>
+        </div>
         <table>
             <tr>
                 <th>ID</th>

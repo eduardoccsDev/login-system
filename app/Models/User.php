@@ -56,4 +56,29 @@ class User {
         $stmt->execute();
         return $stmt;
     }
+    public function addUser($name, $email, $creationDate, $level, $password) {
+
+        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+        $query = "INSERT INTO $this->table (userName, userEmail, userCreationDate, userLevel, userPassword) VALUES (:userName, :userEmail, :userCreationDate, :userLevel, :userPassword)";
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':userName', $name);
+        $stmt->bindParam(':userEmail', $email);
+        $stmt->bindParam(':userCreationDate', $creationDate);
+        $stmt->bindParam(':userLevel', $level);
+        $stmt->bindParam(':userPassword', $hashedPassword);
+
+
+
+        try {
+            if ($stmt->execute()) {
+                return true;
+            }
+            return false;
+        } catch (PDOException $e) {
+            echo "Error adding user: " . $e->getMessage();  // Adicionado para exibir a mensagem de erro
+            return false;
+        }
+    }
 }

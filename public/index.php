@@ -56,7 +56,11 @@ switch ($router) {
         break;
     case 'user':
         $controller = new UserController();
-        $controller->index();
+        if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->add();
+        } else {
+            $controller->index();
+        }
         break;
     default:
         die("Access denied: Rota '$router' não reconhecida.");

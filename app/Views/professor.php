@@ -6,7 +6,7 @@
     <div class="container">
         <h1>Professor management</h1>
         <div class="managementConfigs">
-            <button id="addNew" class="managementConfigs__add">Add a new</button>
+            <button id="addNew" data-popup="professor" class="managementConfigs__add">Add a new</button>
         </div>
         <table>
             <tr>
