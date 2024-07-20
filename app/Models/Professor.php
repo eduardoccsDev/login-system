@@ -43,4 +43,16 @@ class Professor {
             return false;
         }
     }
+    public function deleteProfessor($id) {
+        $query = 'DELETE FROM ' . $this->table . ' WHERE professorId = :professorId';
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':professorId', $id);
+
+        try {
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error deleting professor: " . $e->getMessage();
+            return false;
+        }
+    }
 }

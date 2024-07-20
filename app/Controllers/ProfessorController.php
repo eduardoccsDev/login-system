@@ -36,5 +36,24 @@ class ProfessorController {
             }
         }
     }
+    
+    public function delete() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete']) && $_POST['delete'] === 'delete') {
+            $database = new Database();
+            $db = $database->connect();
+            $professorModel = new Professor($db);
+            
+            $professorId = $_POST['professorId'];
+
+            if ($professorModel->deleteProfessor($professorId)) {
+                $_SESSION['message'] = 'Professor deleted successfully';
+            } else {
+                $_SESSION['message'] = 'Failed to delete professor';
+            }
+
+            header('Location: index.php?router=professor');
+            exit;
+        }
+    }
 
 }

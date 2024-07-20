@@ -1,6 +1,6 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
@@ -19,7 +19,6 @@ use App\Controllers\LoginController;
 use App\Controllers\LogoutController;
 use App\Controllers\ProfessorController;
 use App\Controllers\UserController;
-
 
 if (!isset($_SESSION['userId']) && $_GET['router'] !== 'login') {
     header('Location: index.php?router=login');
@@ -50,6 +49,8 @@ switch ($router) {
         $controller = new ProfessorController();
         if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->add();
+        } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->delete();
         } else {
             $controller->index();
         }
