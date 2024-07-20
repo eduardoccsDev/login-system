@@ -18,7 +18,10 @@ $professors = $professorClass->getAllProfessors();
     <div class="container">
         <h1>Professor management</h1>
         <?php if (isset($_SESSION['message'])): ?>
-            <div class="message"><?= $_SESSION['message']; unset($_SESSION['message']); ?></div>
+            <div class="message">
+                <?= $_SESSION['message']; unset($_SESSION['message']); ?>
+                <button id="close-message" style="margin-left: 20px;">&times;</button>
+            </div>
         <?php endif; ?>
         <div class="managementConfigs">
             <button id="addNew" data-popup="professor" class="managementConfigs__add">Add a new</button>

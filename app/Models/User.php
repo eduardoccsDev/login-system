@@ -81,4 +81,16 @@ class User {
             return false;
         }
     }
+    public function deleteUser($id) {
+        $query = 'DELETE FROM ' . $this->table . ' WHERE userId = :userId';
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':userId', $id);
+
+        try {
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error deleting user: " . $e->getMessage();
+            return false;
+        }
+    }
 }

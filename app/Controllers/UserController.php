@@ -39,4 +39,23 @@ class UserController {
         }
     }
 
+    public function delete() {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete']) && $_POST['delete'] === 'delete') {
+            $database = new Database();
+            $db = $database->connect();
+            $userModel = new User($db);
+            
+            $userId = $_POST['userId'];
+
+            if ($userModel->deleteUser($userId)) {
+                $_SESSION['message'] = 'User deleted successfully';
+            } else {
+                $_SESSION['message'] = 'Failed to delete user';
+            }
+
+            header('Location: index.php?router=user');
+            exit;
+        }
+    }
+
 }

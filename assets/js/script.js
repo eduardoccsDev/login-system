@@ -30,7 +30,7 @@ function showPopup(dataPopup) {
             popupFile = './popups/professorPopup.html';
             break;
         default:
-            popupFile = './popups/professorPopup.html';
+            popupFile = '';
             break;
     }
 

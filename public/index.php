@@ -59,6 +59,8 @@ switch ($router) {
         $controller = new UserController();
         if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->add();
+        } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->delete();
         } else {
             $controller->index();
         }

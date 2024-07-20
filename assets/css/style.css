@@ -52,6 +52,23 @@ body.no-scroll {
 .container table td .delete:hover {
   background-color: rgb(137, 40, 40);
 }
+.container .message {
+  position: absolute;
+  background-color: #3498db;
+  color: #fff;
+  padding: 8px 15px;
+  right: 0;
+  top: 80px;
+}
+.container .message button {
+  background-color: rgba(242, 234, 234, 0.3411764706);
+  border: none;
+  padding: 0px 7px 1px 6px;
+  font-size: 20px;
+  color: #fff;
+  border-radius: 100%;
+  cursor: pointer;
+}
 
 h1 {
   border-bottom: solid 2px rgba(0, 0, 0, 0.2352941176);
@@ -270,7 +287,7 @@ nav .routers a:hover {
   border-radius: 5px;
   font-size: 16px;
 }
-.popup .schoolForm__professor {
+.popup .schoolForm__professor, .popup .schoolForm__user {
   padding: 20px;
   background-color: #fff;
   border-radius: 10px;
@@ -278,10 +295,10 @@ nav .routers a:hover {
   -webkit-box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1098039216);
           box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.1098039216);
 }
-.popup .schoolForm__professor h3 {
+.popup .schoolForm__professor h3, .popup .schoolForm__user h3 {
   text-align: center;
 }
-.popup .schoolForm__professor > div {
+.popup .schoolForm__professor > div, .popup .schoolForm__user > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,13 +309,13 @@ nav .routers a:hover {
   gap: 10px;
   margin-bottom: 20px;
 }
-.popup .schoolForm__professor > div input {
+.popup .schoolForm__professor > div input, .popup .schoolForm__user > div input {
   height: 20px;
   border: solid 1px #3498db;
   border-radius: 5px;
   padding-inline: 5px;
 }
-.popup .schoolForm__professor button[type=submit] {
+.popup .schoolForm__professor button[type=submit], .popup .schoolForm__user button[type=submit] {
   cursor: pointer;
   padding: 8px 10px;
   background-color: #3498db;
@@ -309,10 +326,10 @@ nav .routers a:hover {
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-.popup .schoolForm__professor button[type=submit]:hover {
+.popup .schoolForm__professor button[type=submit]:hover, .popup .schoolForm__user button[type=submit]:hover {
   background-color: #0b5c92;
 }
-.popup .schoolForm__professor .error {
+.popup .schoolForm__professor .error, .popup .schoolForm__user .error {
   color: rgb(157, 26, 26);
   background-color: rgb(253, 191, 191);
   text-align: center;
