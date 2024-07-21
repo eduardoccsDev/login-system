@@ -15,7 +15,7 @@ $user = $userClass->getAllUsers();
 <body>
     <?php require '../components/nav.php' ?>
     <div class="container">
-        <h1>User management</h1>
+        <h1><i class="fa-solid fa-user"></i> User management</h1>
         <?php if (isset($_SESSION['message'])): ?>
             <div class="message">
                 <?= $_SESSION['message']; unset($_SESSION['message']); ?>
@@ -23,17 +23,17 @@ $user = $userClass->getAllUsers();
             </div>
         <?php endif; ?>
         <div class="managementConfigs">
-            <button id="addNew" data-popup="user" class="managementConfigs__add">Add a new</button>
+            <button id="addNew" data-popup="user" class="managementConfigs__add"><i class="fa-solid fa-plus"></i> Add a new</button>
         </div>
         <table>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Level</th>
-                <th>Status</th>
-                <th>Creation date</th>
-                <th>Actions</th>
+                <th><i class="fa-solid fa-hashtag"></i> ID</th>
+                <th><i class="fa-solid fa-signature"></i> Name</th>
+                <th><i class="fa-solid fa-envelope"></i> Email</th>
+                <th><i class="fa-solid fa-turn-up"></i> Level</th>
+                <th><i class="fa-solid fa-spinner"></i> Status</th>
+                <th><i class="fa-solid fa-calendar-days"></i> Creation date</th>
+                <th><i class="fa-solid fa-gears"></i> Actions</th>
             <tr>
             <?php while ($row = $users->fetch(PDO::FETCH_ASSOC)): ?>
                 <tr>
@@ -46,7 +46,7 @@ $user = $userClass->getAllUsers();
                     <td>
                         <form method="post" action="index.php?router=user&action=delete" style="display:inline;" onsubmit="return confirm('Are you sure you want to delete this user?');">
                             <input type="hidden" name="userId" value="<?= $row['userId']; ?>">
-                            <button type="submit" name="delete" value="delete" class="delete">Delete</button>
+                            <button type="submit" name="delete" value="delete" class="delete"><i class="fa-solid fa-trash-can"></i> Delete</button>
                         </form>
                     </td>
                 </tr>
