@@ -11,6 +11,7 @@ body {
 .container {
   max-width: 1236px;
   margin: 0 auto;
+  min-height: calc(100vh - 106px);
   table {
     border-collapse: collapse;
     width: 100%;
@@ -75,7 +76,7 @@ h1 {
   border-bottom: solid 2px #0000003c;
   line-height: 50px;
 }
-.userInfo {
+.userInfo, .footer {
   display: flex;
   justify-content: end;
   padding: 5px 20px;

@@ -53,5 +53,6 @@ $user = $userClass->getAllUsers();
             <?php endwhile; ?>
         </table>
     </div>
+    <?php require '../components/footer.php' ?>
 </body>
 </html>

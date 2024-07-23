@@ -10,6 +10,7 @@ body.no-scroll {
 .container {
   max-width: 1236px;
   margin: 0 auto;
+  min-height: calc(100vh - 106px);
 }
 .container table {
   border-collapse: collapse;
@@ -75,7 +76,7 @@ h1 {
   line-height: 50px;
 }
 
-.userInfo {
+.userInfo, .footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,7 +88,7 @@ h1 {
   color: #fff;
   gap: 5px;
 }
-.userInfo p {
+.userInfo p, .footer p {
   margin: 0;
   font-size: 14px;
 }
