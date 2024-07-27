@@ -1,0 +1,37 @@
+<h2>Add a new discipline</h2>
+<form
+  class="schoolForm__discipline"
+  action="index.php?router=discipline&action=add"
+  method="post"
+>
+  <div>
+    <label for="disciplineName">Name:</label>
+    <input
+      type="text"
+      id="disciplineName"
+      name="disciplineName"
+      placeholder="Ex: English"
+      required
+    />
+  </div>
+  <div>
+    <label for="disciplineDescription">Description:</label>
+    <input
+      type="text"
+      id="disciplineDescription"
+      name="disciplineDescription"
+      placeholder="Ex: lorem ipsum dolor sit amet"
+      required
+    />
+  </div>
+  <div>
+    <label for="disciplineModality">Modality:</label>
+    <select id="disciplineModality" name="disciplineModality">
+        <option value="EAD" selected>EAD</option>
+        <option value="Classroom lesson">Classroom lesson</option>
+    </select>
+  </div>
+  <div>
+    <button type="submit">Add</button>
+  </div>
+</form>
