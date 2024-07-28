@@ -22,6 +22,11 @@
                 <a href="?router=student" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
             </div>
             <div class="quickLinks__card">
+                <p class="quickLinks__card__title"><i class="fa-solid fa-building-flag"></i> Hub management</p>
+                <p class="quickLinks__card__description">Here you can manage the system's hubs.</p>
+                <a href="?router=hub" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
+            </div>
+            <div class="quickLinks__card">
                 <p class="quickLinks__card__title"><i class="fa-solid fa-user"></i> User management</p>
                 <p class="quickLinks__card__description">Here you can manage the system's users.</p>
                 <a href="?router=user" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
