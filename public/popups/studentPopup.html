@@ -1,0 +1,46 @@
+<h2>Add a new student</h2>
+<form
+  class="schoolForm__student"
+  action="index.php?router=student&action=add"
+  method="post"
+>
+  <div>
+    <label for="studentName">Name:</label>
+    <input
+      type="text"
+      id="studentName"
+      name="studentName"
+      placeholder="Ex: Jonh Norris"
+    />
+  </div>
+  <div>
+    <label for="studentEmail">Email:</label>
+    <input
+      type="email"
+      id="studentEmail"
+      name="studentEmail"
+      placeholder="Ex: jonh_norris@gmail.com"
+    />
+  </div>
+  <div>
+    <label for="studentCPF">CPF:</label>
+    <input
+      type="text"
+      id="studentCPF"
+      name="studentCPF"
+      placeholder="Ex: XXX.XXX.XXX-21"
+    />
+  </div>
+  <div>
+    <label for="studentHub">Hub:</label>
+    <input
+      type="text"
+      id="studentHub"
+      name="studentHub"
+      placeholder="Ex: Hub-123"
+    />
+  </div>
+  <div>
+    <button type="submit">Add</button>
+  </div>
+</form>

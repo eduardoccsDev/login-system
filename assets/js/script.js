@@ -32,6 +32,9 @@ function showPopup(dataPopup) {
         case 'discipline':
             popupFile = './popups/disciplinePopup.html';
             break;
+        case 'student':
+            popupFile = './popups/studentPopup.html';
+            break;
         default:
             popupFile = '';
             break;

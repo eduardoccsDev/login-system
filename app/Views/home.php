@@ -17,6 +17,11 @@
                 <a href="?router=discipline" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
             </div>
             <div class="quickLinks__card">
+                <p class="quickLinks__card__title"><i class="fa-solid fa-graduation-cap"></i> Student management</p>
+                <p class="quickLinks__card__description">Here you can manage the system's students.</p>
+                <a href="?router=student" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
+            </div>
+            <div class="quickLinks__card">
                 <p class="quickLinks__card__title"><i class="fa-solid fa-user"></i> User management</p>
                 <p class="quickLinks__card__description">Here you can manage the system's users.</p>
                 <a href="?router=user" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>

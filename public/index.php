@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 session_start();
 
 require_once '../app/Models/Database.php';
+require_once '../app/Models/Student.php';
 require_once '../app/Models/Discipline.php';
 require_once '../app/Models/User.php';
 require_once '../app/Models/Professor.php';
@@ -15,6 +16,7 @@ require_once '../app/Controllers/LogoutController.php';
 require_once '../app/Controllers/ProfessorController.php';
 require_once '../app/Controllers/UserController.php';
 require_once '../app/Controllers/DisciplineController.php';
+require_once '../app/Controllers/StudentController.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
@@ -22,6 +24,7 @@ use App\Controllers\LogoutController;
 use App\Controllers\ProfessorController;
 use App\Controllers\UserController;
 use App\Controllers\DisciplineController;
+use App\Controllers\StudentController;
 
 if (!isset($_SESSION['userId']) && $_GET['router'] !== 'login') {
     header('Location: index.php?router=login');
@@ -60,6 +63,16 @@ switch ($router) {
         break;
     case 'discipline':
             $controller = new DisciplineController();
+            if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                $controller->add();
+            } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+                $controller->delete();
+            } else {
+                $controller->index();
+            }
+            break;
+    case 'student':
+            $controller = new StudentController();
             if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
                 $controller->add();
             } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
