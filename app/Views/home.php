@@ -12,6 +12,11 @@
                 <a href="?router=professor" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
             </div>
             <div class="quickLinks__card">
+                <p class="quickLinks__card__title"><i class="fa-solid fa-scroll"></i> Course management</p>
+                <p class="quickLinks__card__description">Here you can manage the system's courses.</p>
+                <a href="?router=course" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>
+            </div>
+            <div class="quickLinks__card">
                 <p class="quickLinks__card__title"><i class="fa-solid fa-book"></i> Discipline management</p>
                 <p class="quickLinks__card__description">Here you can manage the system's disciplines.</p>
                 <a href="?router=discipline" class="quickLinks__card__router"><i class="fa-solid fa-gear"></i> Config</a>

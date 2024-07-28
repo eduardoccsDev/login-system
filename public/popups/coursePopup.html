@@ -1,0 +1,39 @@
+<h2>Add a new course</h2>
+<form
+  class="schoolForm__course"
+  action="index.php?router=course&action=add"
+  method="post"
+>
+  <div>
+    <label for="courseName">Name:</label>
+    <input
+      type="text"
+      id="courseName"
+      name="courseName"
+      placeholder="Ex: Computer Science"
+      required
+    />
+  </div>
+  <div>
+    <label for="courseDescription">Description:</label>
+    <input
+      type="text"
+      id="courseDescription"
+      name="courseDescription"
+      placeholder="Ex: lorem ipsum dolor sit amet"
+      required
+    />
+  </div>
+  <div>
+    <label for="courseType">Type:</label>
+    <select id="courseType" name="courseType">
+        <option value="Bachelor degree" selected>Bachelor degree</option>
+        <option value="Master's degree" selected>Master's degree</option>
+        <option value="Doctorate degree" selected>Doctorate degree</option>
+        <option value="Technologist">Technologist</option>
+    </select>
+  </div>
+  <div>
+    <button type="submit">Add</button>
+  </div>
+</form>
