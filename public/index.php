@@ -1,26 +1,12 @@
 <?php
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Iniciar sessão
 session_start();
 
-require_once '../app/Models/Database.php';
-require_once '../app/Models/Student.php';
-require_once '../app/Models/Hub.php';
-require_once '../app/Models/Course.php';
-require_once '../app/Models/Discipline.php';
-require_once '../app/Models/User.php';
-require_once '../app/Models/Professor.php';
-require_once '../app/Controllers/HomeController.php';
-require_once '../app/Controllers/LoginController.php';
-require_once '../app/Controllers/LogoutController.php';
-require_once '../app/Controllers/ProfessorController.php';
-require_once '../app/Controllers/UserController.php';
-require_once '../app/Controllers/DisciplineController.php';
-require_once '../app/Controllers/StudentController.php';
-require_once '../app/Controllers/HubController.php';
-require_once '../app/Controllers/CourseController.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
@@ -32,6 +18,7 @@ use App\Controllers\StudentController;
 use App\Controllers\HubController;
 use App\Controllers\CourseController;
 
+// Verifique se a sessão está configurada e a rota é válida
 if (!isset($_SESSION['userId']) && $_GET['router'] !== 'login') {
     header('Location: index.php?router=login');
     exit;
@@ -68,15 +55,15 @@ switch ($router) {
         }
         break;
     case 'discipline':
-            $controller = new DisciplineController();
-            if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-                $controller->add();
-            } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
-                $controller->delete();
-            } else {
-                $controller->index();
-            }
-            break;
+        $controller = new DisciplineController();
+        if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->add();
+        } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
+            $controller->delete();
+        } else {
+            $controller->index();
+        }
+        break;
     case 'student':
         $controller = new StudentController();
         if ($action == 'add' && $_SERVER['REQUEST_METHOD'] === 'POST') {

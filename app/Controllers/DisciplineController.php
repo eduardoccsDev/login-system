@@ -22,21 +22,28 @@ class DisciplineController {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $database = new Database();
             $db = $database->connect();
-
+    
             $disciplineModel = new Discipline($db);
             
             $name = $_POST['disciplineName'];
             $description = $_POST['disciplineDescription'];
             $creationDate = date('Y-m-d H:i:s');
             $modality = $_POST['disciplineModality'];
+            $courseId = $_POST['courseId'];
 
             if ($disciplineModel->addDiscipline($name, $description, $creationDate, $modality)) {
-                echo '<script>alert("Discipline added successfully!"); window.location.href="index.php?router=discipline";</script>';
+                $disciplineId = $db->lastInsertId();
+                if ($disciplineModel->addDisciplineToCourse($disciplineId, $courseId)) {
+                    echo '<script>alert("Discipline added successfully with course association!"); window.location.href="index.php?router=discipline";</script>';
+                } else {
+                    echo '<script>alert("Error associating discipline with course."); window.location.href="index.php?router=discipline";</script>';
+                }
             } else {
                 echo '<script>alert("Error adding discipline."); window.location.href="index.php?router=discipline";</script>';
             }
         }
     }
+    
     
     public function delete() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete']) && $_POST['delete'] === 'delete') {

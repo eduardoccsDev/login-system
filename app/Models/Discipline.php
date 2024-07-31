@@ -15,6 +15,7 @@ class Discipline {
     public $disciplineCreationDate;
     public $disciplineStatus;
     public $disciplineModality;
+    public $courseId;
 
     public function __construct($db) {
         $this->conn = $db;
@@ -58,4 +59,19 @@ class Discipline {
             return false;
         }
     }
+    public function addDisciplineToCourse($disciplineId, $courseId) {
+        $query = "INSERT INTO disciplineToCourse (disciplineId, courseId, disciplineToCourseIdCreationData) VALUES (:disciplineId, :courseId, NOW())";
+        $stmt = $this->conn->prepare($query);
+    
+        $stmt->bindParam(':disciplineId', $disciplineId);
+        $stmt->bindParam(':courseId', $courseId);
+    
+        try {
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error adding discipline to course: " . $e->getMessage();
+            return false;
+        }
+    }
+    
 }

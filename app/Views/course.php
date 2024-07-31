@@ -41,6 +41,7 @@
                             <input type="hidden" name="courseId" value="<?= $row['courseId']; ?>">
                             <button type="submit" name="delete" value="delete" class="delete"><i class="fa-solid fa-trash-can"></i> Delete</button>
                         </form>
+                        <button id="addNew" data-popup="course" class="managementConfigs__add"><i class="fa-solid fa-plus"></i> Disciplines</button>
                     </td>
                 </tr>
             <?php endwhile; ?>

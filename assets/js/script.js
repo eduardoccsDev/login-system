@@ -30,7 +30,7 @@ function showPopup(dataPopup) {
             popupFile = './popups/professorPopup.html';
             break;
         case 'discipline':
-            popupFile = './popups/disciplinePopup.html';
+            popupFile = '../app/Views/disciplinePopup.php';
             break;
         case 'student':
             popupFile = './popups/studentPopup.html';
