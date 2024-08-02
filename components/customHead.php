@@ -6,5 +6,6 @@
     <script src="https://kit.fontawesome.com/98a449709c.js" crossorigin="anonymous"></script>
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/closeMessage.js"></script>
+    <script src="../assets/js/courseDiscipline.js"></script>
     <title><?php echo isset($pageTitle) ? $pageTitle : 'Default Title'; ?></title>
 </head>

@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Database;
 use App\Models\Course;
+use PDO;
 
 class CourseController {
 
@@ -12,7 +13,11 @@ class CourseController {
         $db = $database->connect();
         
         $courseModel = new Course($db);
-        $course = $courseModel->getAllCourses();
+        $courses = $courseModel->getAllCourses()->fetchAll(PDO::FETCH_ASSOC);
+        // Adiciona a contagem de disciplinas para cada curso
+        foreach ($courses as &$course) { 
+            $course['disciplineCount'] = $courseModel->getCountDiscipline($course['courseId']);
+        }
         
         require '../app/Views/course.php';
     }
@@ -52,6 +57,22 @@ class CourseController {
             }
 
             header('Location: index.php?router=course');
+            exit;
+        }
+    }
+
+    public function getDisciplines() {
+        if (isset($_GET['courseId'])) {
+            $courseId = $_GET['courseId'];
+            
+            $database = new Database();
+            $db = $database->connect();
+            $courseModel = new Course($db);
+
+            $disciplines = $courseModel->getDisciplineByCourseId($courseId);
+
+            header('Content-Type: application/json');
+            echo json_encode($disciplines);
             exit;
         }
     }

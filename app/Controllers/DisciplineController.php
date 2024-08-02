@@ -43,8 +43,7 @@ class DisciplineController {
             }
         }
     }
-    
-    
+     
     public function delete() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete']) && $_POST['delete'] === 'delete') {
             $database = new Database();

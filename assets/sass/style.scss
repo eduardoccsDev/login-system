@@ -15,15 +15,17 @@ body {
   table {
     border-collapse: collapse;
     width: 100%;
+    thead{
+      tr{   
+        background-color: $primary-color !important;
+        color: #fff;
+      }
+    }
     td,
     th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
-    }
-    tr:first-child {
-      background-color: $primary-color !important;
-      color: #fff;
     }
     tr:nth-child(even) {
       background-color: #dddddd;
@@ -221,7 +223,7 @@ nav {
   background: rgba(0, 0, 0, 0.5);
   z-index: 1000;
 }
-.popup {
+.popup, .disciplinePopup {
   position: absolute;
   top: 50%;
   left: 50%;

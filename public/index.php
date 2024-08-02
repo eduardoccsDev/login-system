@@ -90,6 +90,8 @@ switch ($router) {
             $controller->add();
         } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->delete();
+        } elseif ($action == 'getDisciplines') {
+            $controller->getDisciplines();
         } else {
             $controller->index();
         }

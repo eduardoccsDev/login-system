@@ -58,4 +58,35 @@ class Course {
             return false;
         }
     }
+    public function getDisciplineByCourseId($courseId) {
+        $query = "SELECT DTC.*,DP.disciplineName, DP.disciplineDescription 
+                    FROM disciplineToCourse DTC 
+                    LEFT JOIN discipline DP 
+                    ON DP.disciplineId = DTC.disciplineId
+                    WHERE 
+                    DTC.courseId = :courseId;";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':courseId', $courseId);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getCountDiscipline($courseId) {
+        $query = "SELECT 
+                    COUNT(DP.disciplineId) AS totalDisciplines
+                  FROM 
+                    disciplineToCourse DTC
+                  LEFT JOIN 
+                    discipline DP ON DP.disciplineId = DTC.disciplineId
+                  WHERE 
+                    DTC.courseId = :courseId;";
+        
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':courseId', $courseId, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['totalDisciplines']; // Retorna apenas a contagem
+    }
+    
+    
 }
