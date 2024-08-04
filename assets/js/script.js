@@ -39,7 +39,7 @@ function showPopup(dataPopup) {
             popupFile = './popups/hubPopup.html';
             break;
         case 'course':
-            popupFile = './popups/coursePopup.html';
+            popupFile = '../app/Views/coursePopup.php';
             break;
         default:
             popupFile = '';

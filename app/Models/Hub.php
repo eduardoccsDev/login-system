@@ -54,4 +54,33 @@ class Hub {
             return false;
         }
     }
+    public function getCourseByHubId($hubId) {
+        $query = "SELECT CTH.*,CS.courseName, CS.courseDescription, CS.courseType
+                    FROM courseToHub CTH 
+                    LEFT JOIN courses CS 
+                    ON CS.courseId = CTH.courseId
+                    WHERE 
+                    CTH.hubId =:hubId";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':hubId', $hubId);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public function getCountCourse($hubId) {
+        $query = "SELECT 
+                    COUNT(CS.courseId) AS totalCourses
+                  FROM 
+                    courseToHub CTH
+                  LEFT JOIN 
+                    courses CS ON CS.courseId = CTH.courseId
+                  WHERE 
+                    CTH.hubId = :hubId;";
+        
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':hubId', $hubId, PDO::PARAM_INT);
+        $stmt->execute();
+        
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['totalCourses']; // Retorna apenas a contagem
+    }
 }

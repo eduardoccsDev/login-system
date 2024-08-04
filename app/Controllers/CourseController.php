@@ -33,9 +33,15 @@ class CourseController {
             $description = $_POST['courseDescription'];
             $type = $_POST['courseType'];
             $creationDate = date('Y-m-d H:i:s');
+            $hubId = $_POST['hubId'];
             
             if ($courseModel->addCourse($name, $description, $creationDate, $type)) {
-                echo '<script>alert("Course added successfully!"); window.location.href="index.php?router=course";</script>';
+                $courseId = $db->lastInsertId();
+                if ($courseModel->addCourseToHub($courseId, $hubId)) {
+                    echo '<script>alert("Course added successfully with hub association!"); window.location.href="index.php?router=course";</script>';
+                } else {
+                    echo '<script>alert("Error associating course with hub."); window.location.href="index.php?router=course";</script>';
+                }
             } else {
                 echo '<script>alert("Error adding course."); window.location.href="index.php?router=course";</script>';
             }

@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const popup = document.getElementById('disciplinePopup');
+    const popup = document.getElementById('coursePopup');
     const overlay = document.querySelector('.overlay');
     const closeButton = popup.querySelector('.close-btn');
-    const disciplineTableBody = document.querySelector('#disciplineTable tbody');
+    const courseTableBody = document.querySelector('#courseTable tbody');
 
     if (!popup) {
         console.error('O elemento popup não foi encontrado!');
@@ -22,27 +22,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Adiciona o listener de clique a todos os botões de disciplinas
-    document.querySelectorAll('button[data-course-id]').forEach(button => {
+    document.querySelectorAll('button[data-hub-id]').forEach(button => {
         button.addEventListener('click', function () {
-            const courseId = this.getAttribute('data-course-id');
+            const hubId = this.getAttribute('data-hub-id');
 
             // Requisita as disciplinas para o curso selecionado
-            fetch(`index.php?router=course&action=getDisciplines&courseId=${courseId}`)
+            fetch(`index.php?router=hub&action=getCourses&hubId=${hubId}`)
                 .then(response => response.json())
                 .then(data => {
                     // Limpa a tabela antes de adicionar os novos dados
-                    disciplineTableBody.innerHTML = '';
+                    courseTableBody.innerHTML = '';
 
-                    // Adiciona as disciplinas à tabela
-                    data.forEach(discipline => {
+                    data.forEach(course => {
                         const row = document.createElement('tr');
                         row.innerHTML = `
-                            <td>${discipline.disciplineId}</td>
-                            <td>${discipline.disciplineName}</td>
-                            <td>${discipline.disciplineDescription}</td>
-                            <td>${discipline.disciplinePeriod}</td>
+                            <td>${course.courseId}</td>
+                            <td>${course.courseName}</td>
+                            <td>${course.courseDescription}</td>
+                            <td>${course.courseType}</td>
                         `;
-                        disciplineTableBody.appendChild(row);
+                        courseTableBody.appendChild(row);
                     });
 
                     // Exibe o popup
@@ -51,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.body.classList.add('no-scroll');
                 })
                 .catch(error => {
-                    console.error('Erro ao buscar disciplinas:', error);
+                    console.error('Erro ao buscar cursos:', error);
                 });
         });
     });

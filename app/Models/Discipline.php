@@ -15,6 +15,7 @@ class Discipline {
     public $disciplineCreationDate;
     public $disciplineStatus;
     public $disciplineModality;
+    public $disciplinePeriod;
     public $courseId;
 
     public function __construct($db) {
@@ -27,14 +28,15 @@ class Discipline {
         $stmt->execute();
         return $stmt;
     }
-    public function addDiscipline($name, $description, $creationDate, $modality) {
-        $query = "INSERT INTO $this->table (disciplineName, disciplineDescription, disciplineCreationDate, disciplineModality) VALUES (:disciplineName, :disciplineDescription, :disciplineCreationDate, :disciplineModality)";
+    public function addDiscipline($name, $description, $creationDate, $modality, $period) {
+        $query = "INSERT INTO $this->table (disciplineName, disciplineDescription, disciplineCreationDate, disciplineModality, disciplinePeriod) VALUES (:disciplineName, :disciplineDescription, :disciplineCreationDate, :disciplineModality, :disciplinePeriod)";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':disciplineName', $name);
         $stmt->bindParam(':disciplineDescription', $description);
         $stmt->bindParam(':disciplineCreationDate', $creationDate);
         $stmt->bindParam(':disciplineModality', $modality);
+        $stmt->bindParam(':disciplinePeriod', $period);
 
 
         try {
@@ -60,7 +62,7 @@ class Discipline {
         }
     }
     public function addDisciplineToCourse($disciplineId, $courseId) {
-        $query = "INSERT INTO disciplineToCourse (disciplineId, courseId, disciplineToCourseIdCreationData) VALUES (:disciplineId, :courseId, NOW())";
+        $query = "INSERT INTO disciplineToCourse (disciplineId, courseId, disciplineToCourseCreationData) VALUES (:disciplineId, :courseId, NOW())";
         $stmt = $this->conn->prepare($query);
     
         $stmt->bindParam(':disciplineId', $disciplineId);

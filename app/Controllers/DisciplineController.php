@@ -29,9 +29,10 @@ class DisciplineController {
             $description = $_POST['disciplineDescription'];
             $creationDate = date('Y-m-d H:i:s');
             $modality = $_POST['disciplineModality'];
+            $period = $_POST['disciplinePeriod'];
             $courseId = $_POST['courseId'];
 
-            if ($disciplineModel->addDiscipline($name, $description, $creationDate, $modality)) {
+            if ($disciplineModel->addDiscipline($name, $description, $creationDate, $modality, $period)) {
                 $disciplineId = $db->lastInsertId();
                 if ($disciplineModel->addDisciplineToCourse($disciplineId, $courseId)) {
                     echo '<script>alert("Discipline added successfully with course association!"); window.location.href="index.php?router=discipline";</script>';

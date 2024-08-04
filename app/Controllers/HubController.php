@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\Database;
 use App\Models\Hub;
+use PDO;
 
 class HubController {
 
@@ -12,7 +13,11 @@ class HubController {
         $db = $database->connect();
         
         $hubModel = new Hub($db);
-        $hub = $hubModel->getAllHubs();
+        $hubs = $hubModel->getAllHubs()->fetchAll(PDO::FETCH_ASSOC);
+        // Adiciona a contagem de disciplinas para cada curso
+        foreach ($hubs as &$hub) { 
+            $hub['courseCount'] = $hubModel->getCountCourse($hub['hubId']);
+        }
         
         require '../app/Views/hub.php';
     }
@@ -50,6 +55,22 @@ class HubController {
             }
 
             header('Location: index.php?router=hub');
+            exit;
+        }
+    }
+
+    public function getCourses() {
+        if (isset($_GET['hubId'])) {
+            $hubId = $_GET['hubId'];
+            
+            $database = new Database();
+            $db = $database->connect();
+            $hubModel = new Hub($db);
+
+            $hubs = $hubModel->getCourseByHubId($hubId);
+
+            header('Content-Type: application/json');
+            echo json_encode($hubs);
             exit;
         }
     }

@@ -1,6 +1,6 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Iniciar sessão
@@ -80,6 +80,8 @@ switch ($router) {
             $controller->add();
         } elseif ($action == 'delete' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $controller->delete();
+        }elseif ($action == 'getCourses') {
+            $controller->getCourses();
         } else {
             $controller->index();
         }

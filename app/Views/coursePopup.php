@@ -1,3 +1,15 @@
+<?php
+    session_start();
+    require_once __DIR__ . '/../Models/Database.php';
+    require_once __DIR__ . '/../Models/Hub.php';
+    use App\Models\Database;
+    use App\Models\Hub;
+    $database = new Database();
+    $db = $database->connect();
+    
+    $hubModel = new Hub($db);
+    $hub = $hubModel->getAllHubs();
+?>
 <h2>Add a new course</h2>
 <form
   class="schoolForm__course"
@@ -31,6 +43,19 @@
         <option value="Master's degree" selected>Master's degree</option>
         <option value="Doctorate degree" selected>Doctorate degree</option>
         <option value="Technologist">Technologist</option>
+    </select>
+  </div>
+  <div>
+    <label for="hubId">Select hub:</label>
+    <select id="hubId" name="hubId" required>
+      <option value="">Select a hub</option>
+      <?php
+      while ($row = $hub->fetch(PDO::FETCH_ASSOC)) {
+          $hubId = htmlspecialchars($row['hubId']);
+          $hubName = htmlspecialchars($row['hubName']);
+          echo "<option value=\"{$hubId}\">{$hubName}</option>";
+      }
+      ?>
     </select>
   </div>
   <div>

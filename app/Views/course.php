@@ -45,7 +45,7 @@ session_start();
                             <input type="hidden" name="courseId" value="<?= $row['courseId']; ?>">
                             <button type="submit" name="delete" value="delete" class="delete"><i class="fa-solid fa-trash-can"></i> Delete</button>
                         </form>
-                        <button data-course-id="<?= $row['courseId']; ?>" class="managementConfigs__add"><i class="fa-solid fa-plus"></i> Disciplines</button>
+                        <button data-course-id="<?= $row['courseId']; ?>" class="disciplines"><i class="fa-solid fa-magnifying-glass-plus"></i> Disciplines</button>
                     </td>
                 </tr>
             <?php endforeach; ?>
@@ -53,14 +53,17 @@ session_start();
         <div class="overlay" id="overlay" style="display:none"></div>
         <div id="disciplinePopup" class="popup" style="display: none;">
             <div class="popup-content">
-                <span class="close-btn">Close</span>
-                <h2>Disciplines</h2>
+                <div class="popup-header">
+                    <h2>Disciplines</h2>
+                    <span class="close-btn"><i class="fa-solid fa-xmark"></i></span>
+                </div>
                 <table id="disciplineTable">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
+                            <th><i class="fa-solid fa-hashtag"></i> ID</th>
+                            <th><i class="fa-solid fa-signature"></i> Name</th>
+                            <th><i class="fa-regular fa-message"></i> Description</th>
+                            <th><i class="fa-solid fa-calendar-week"></i> Period</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,8 +72,6 @@ session_start();
                 </table>
             </div>
         </div>
-
-
     </div>
     <?php require '../components/footer.php' ?>
 </body>

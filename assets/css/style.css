@@ -53,6 +53,19 @@ body.no-scroll {
 .container table td .delete:hover {
   background-color: rgb(137, 40, 40);
 }
+.container table td .disciplines, .container table td .courses {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #3498db;
+  cursor: pointer;
+}
+.container table td .disciplines:hover, .container table td .courses:hover {
+  background-color: #0b5c92;
+}
 .container .message {
   position: absolute;
   background-color: #3498db;
@@ -337,4 +350,22 @@ nav .routers a:hover {
   text-align: center;
   padding: 8px 10px;
   border-radius: 5px;
+}
+
+#disciplinePopup .popup-header, #coursePopup .popup-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+#disciplinePopup .popup-header h2, #coursePopup .popup-header h2 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+#disciplinePopup .popup-header .close-btn, #coursePopup .popup-header .close-btn {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: absolute;
+  right: 20px;
+  top: 8px;
 }/*# sourceMappingURL=style.css.map */

@@ -15,6 +15,7 @@ class Course {
     public $courseType;
     public $courseCreationDate;
     public $courseStatus;
+    public $hubId;
 
     public function __construct($db) {
         $this->conn = $db;
@@ -59,12 +60,14 @@ class Course {
         }
     }
     public function getDisciplineByCourseId($courseId) {
-        $query = "SELECT DTC.*,DP.disciplineName, DP.disciplineDescription 
+        $query = "SELECT DTC.*,DP.disciplineName, DP.disciplineDescription, DP.disciplinePeriod 
                     FROM disciplineToCourse DTC 
                     LEFT JOIN discipline DP 
                     ON DP.disciplineId = DTC.disciplineId
                     WHERE 
-                    DTC.courseId = :courseId;";
+                    DTC.courseId = :courseId;
+                    ORDER BY 
+                    DP.disciplinePeriod ASC";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':courseId', $courseId);
         $stmt->execute();
@@ -86,6 +89,20 @@ class Course {
         
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result['totalDisciplines']; // Retorna apenas a contagem
+    }
+    public function addCourseToHub($hubId, $courseId) {
+        $query = "INSERT INTO courseToHub (courseId, hubId, courseToHubCreationData) VALUES (:courseId, :hubId, NOW())";
+        $stmt = $this->conn->prepare($query);
+    
+        $stmt->bindParam(':courseId', $courseId);
+        $stmt->bindParam(':hubId', $hubId);
+    
+        try {
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error adding course to hub: " . $e->getMessage();
+            return false;
+        }
     }
     
     

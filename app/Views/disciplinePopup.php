@@ -45,6 +45,19 @@
     </select>
   </div>
   <div>
+    <label for="disciplinePeriod">Period:</label>
+    <select id="disciplinePeriod" name="disciplinePeriod">
+        <option value="1st Semester" selected>1st Semester</option>
+        <option value="2nd Semester">2nd Semester</option>
+        <option value="3rd Semester">3rd Semester</option>
+        <option value="4th Semester">4th Semester</option>
+        <option value="5th Semester">5th Semester</option>
+        <option value="6th Semester">6th Semester</option>
+        <option value="7th Semester">7th Semester</option>
+        <option value="8th Semester">8th Semester</option>
+    </select>
+  </div>
+  <div>
     <label for="courseId">Select Course:</label>
     <select id="courseId" name="courseId" required>
       <option value="">Select a course</option>

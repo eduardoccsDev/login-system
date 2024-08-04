@@ -7,5 +7,6 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/closeMessage.js"></script>
     <script src="../assets/js/courseDiscipline.js"></script>
+    <script src="../assets/js/hubCourse.js"></script>
     <title><?php echo isset($pageTitle) ? $pageTitle : 'Default Title'; ?></title>
 </head>

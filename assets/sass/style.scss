@@ -54,6 +54,18 @@ body {
           background-color: rgb(137, 40, 40);
         }
       }
+      .disciplines, .courses{
+        padding:5px 10px;
+        border-radius: 5px;
+        color: #fff;
+        border: none;
+        transition: .5s;
+        background-color: $primary-color;
+        cursor: pointer;
+        &:hover{
+          background-color: $primary-color-dark;
+        }
+      }
     }
   }
   .message {
@@ -291,4 +303,19 @@ nav {
     }
     
   }
+}
+#disciplinePopup, #coursePopup{
+  .popup-header{
+    display: flex;
+    h2{
+      flex-basis: 100%;
+    }
+    .close-btn{
+      height: fit-content;
+      position: absolute;
+      right: 20px;
+      top: 8px;
+    }
+  }
+
 }
