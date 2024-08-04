@@ -26,23 +26,34 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', function () {
             const hubId = this.getAttribute('data-hub-id');
 
-            // Requisita as disciplinas para o curso selecionado
+            // Requisita os cursos para o hub selecionado
             fetch(`index.php?router=hub&action=getCourses&hubId=${hubId}`)
                 .then(response => response.json())
                 .then(data => {
                     // Limpa a tabela antes de adicionar os novos dados
                     courseTableBody.innerHTML = '';
 
-                    data.forEach(course => {
-                        const row = document.createElement('tr');
-                        row.innerHTML = `
-                            <td>${course.courseId}</td>
-                            <td>${course.courseName}</td>
-                            <td>${course.courseDescription}</td>
-                            <td>${course.courseType}</td>
+                    // Verifica se o array de cursos está vazio
+                    if (data.length === 0) {
+                        // Se não houver cursos, exibe uma mensagem informando
+                        const messageRow = document.createElement('tr');
+                        messageRow.innerHTML = `
+                            <td colspan="4" style="text-align: center;">No courses available at this hub.</td>
                         `;
-                        courseTableBody.appendChild(row);
-                    });
+                        courseTableBody.appendChild(messageRow);
+                    } else {
+                        // Adiciona os cursos à tabela
+                        data.forEach(course => {
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${course.courseId}</td>
+                                <td>${course.courseName}</td>
+                                <td>${course.courseDescription}</td>
+                                <td>${course.courseType}</td>
+                            `;
+                            courseTableBody.appendChild(row);
+                        });
+                    }
 
                     // Exibe o popup
                     popup.style.display = 'block';

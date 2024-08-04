@@ -57,7 +57,7 @@
                             <th><i class="fa-solid fa-hashtag"></i> ID</th>
                             <th><i class="fa-solid fa-signature"></i> Name</th>
                             <th><i class="fa-regular fa-message"></i> Description</th>
-                            <th><i class="fa-solid fa-calendar-week"></i> Period</th>
+                            <th><i class="fa-solid fa-receipt"></i> Type</th>
                         </tr>
                     </thead>
                     <tbody>
