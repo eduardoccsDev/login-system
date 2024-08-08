@@ -4,3 +4,4 @@ tests
 assets/sass/_variables.scss
 assets/sass/style.scss
 inc/Database.php
+.env

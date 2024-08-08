@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php $pageTitle = 'Discipline management'; require '../components/customHead.php'; ?>

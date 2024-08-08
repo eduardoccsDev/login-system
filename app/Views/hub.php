@@ -1,7 +1,3 @@
-<?php
-    session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <?php $pageTitle = 'Hub management'; require '../components/customHead.php'; ?>
