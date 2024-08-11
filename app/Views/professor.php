@@ -28,6 +28,7 @@
                 <button id="addNew" data-popup="professor" class="managementConfigs__add"><i class="fa-solid fa-plus"></i> Add a new</button>
             </div>
             <table>
+            <thead>
                 <tr>
                     <th><i class="fa-solid fa-hashtag"></i> ID</th>
                     <th><i class="fa-solid fa-signature"></i> Name</th>
@@ -36,6 +37,7 @@
                     <th><i class="fa-solid fa-calendar-days"></i> Creation date</th>
                     <th><i class="fa-solid fa-gears"></i> Actions</th>
                 <tr>
+            </thead>
                 <?php while ($row = $professors->fetch(PDO::FETCH_ASSOC)): ?>
                     <tr>
                         <td><?= $row['professorId']; ?></td>

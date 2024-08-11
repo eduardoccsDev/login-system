@@ -17,6 +17,7 @@
                 <button id="addNew" data-popup="hub" class="managementConfigs__add"><i class="fa-solid fa-plus"></i> Add a new</button>
             </div>
             <table>
+            <thead>
                 <tr>
                     <th><i class="fa-solid fa-hashtag"></i> ID</th>
                     <th><i class="fa-solid fa-signature"></i> Name</th>
@@ -25,6 +26,7 @@
                     <th><i class="fa-solid fa-calendar-days"></i> Creation date</th>
                     <th><i class="fa-solid fa-gears"></i> Actions</th>
                 <tr>
+            </thead>
                 <?php foreach ($hubs as $row): ?>
                     <tr>
                         <td><?= $row['hubId']; ?></td>
