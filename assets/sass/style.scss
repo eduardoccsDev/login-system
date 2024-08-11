@@ -11,7 +11,7 @@ body {
 .wrapper{
   display: flex;
   gap: 20px;
-  min-height: calc(100vh - 85px);
+  min-height: calc(100vh - 55px);
   .sidebar {
     display: flex;
     flex-direction: column;
@@ -19,10 +19,12 @@ body {
     padding: 10px;
     background: #fff;
     width: 230px;
+    border-right: solid 2px $primary-color;
   }
 
   .container {
     max-width: 1236px;
+    min-width: 1236px;
     margin: 0 auto;
     min-height: calc(100vh - 106px);
     padding-right: 20px;

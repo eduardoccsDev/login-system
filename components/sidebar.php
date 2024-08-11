@@ -1,5 +1,6 @@
 <div class="sidebar">
     <h3>Menu</h3>
+    <a href="?router=home" class="quickLinks__card__router"><i class="fa-solid fa-house"></i> Home</a>
     <a href="?router=professor" class="quickLinks__card__router"><i class="fa-solid fa-chalkboard-user"></i> Professors</a>
     <a href="?router=course" class="quickLinks__card__router"><i class="fa-solid fa-scroll"></i> Courses</a>
     <a href="?router=discipline" class="quickLinks__card__router"><i class="fa-solid fa-book"></i> Disciplines</a>

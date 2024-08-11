@@ -12,7 +12,7 @@ body.no-scroll {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
-  min-height: calc(100vh - 85px);
+  min-height: calc(100vh - 55px);
 }
 .wrapper .sidebar {
   display: -webkit-box;
@@ -26,9 +26,11 @@ body.no-scroll {
   padding: 10px;
   background: #fff;
   width: 230px;
+  border-right: solid 2px #3498db;
 }
 .wrapper .container {
   max-width: 1236px;
+  min-width: 1236px;
   margin: 0 auto;
   min-height: calc(100vh - 106px);
   padding-right: 20px;

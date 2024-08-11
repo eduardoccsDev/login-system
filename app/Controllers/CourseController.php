@@ -40,7 +40,7 @@ class CourseController {
                 if ($courseModel->addCourseToHub($courseId, $hubId)) {
                     echo '<script>alert("Course added successfully with hub association!"); window.location.href="index.php?router=course";</script>';
                 } else {
-                    echo '<script>alert("Error associating course with hub."); window.location.href="index.php?router=course";</script>';
+                    echo '<script>alert("Error associating course with hub.");</script>';
                 }
             } else {
                 echo '<script>alert("Error adding course."); window.location.href="index.php?router=course";</script>';

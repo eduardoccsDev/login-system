@@ -90,7 +90,7 @@ class Course {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result['totalDisciplines']; // Retorna apenas a contagem
     }
-    public function addCourseToHub($hubId, $courseId) {
+    public function addCourseToHub($courseId, $hubId) {
         $query = "INSERT INTO courseToHub (courseId, hubId, courseToHubCreationData) VALUES (:courseId, :hubId, NOW())";
         $stmt = $this->conn->prepare($query);
     
