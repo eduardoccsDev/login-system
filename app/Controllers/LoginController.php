@@ -13,7 +13,6 @@ class LoginController {
 
     public function authenticate() {
         // Inicializa as variáveis de sessão
-        session_start();
 
         // Conecta ao banco de dados
         $database = new Database();

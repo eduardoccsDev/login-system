@@ -7,40 +7,61 @@ body.no-scroll {
   overflow: hidden;
 }
 
-.container {
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 20px;
+  min-height: calc(100vh - 85px);
+}
+.wrapper .sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: #fff;
+  width: 230px;
+}
+.wrapper .container {
   max-width: 1236px;
   margin: 0 auto;
   min-height: calc(100vh - 106px);
+  padding-right: 20px;
 }
-.container table {
+.wrapper .container table {
   border-collapse: collapse;
   width: 100%;
 }
-.container table thead tr {
+.wrapper .container table thead tr {
   background-color: #3498db !important;
   color: #fff;
 }
-.container table td,
-.container table th {
+.wrapper .container table td,
+.wrapper .container table th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
 }
-.container table tr:nth-child(even) {
+.wrapper .container table tr:nth-child(even) {
   background-color: #dddddd;
 }
-.container table tr:nth-child(odd) {
+.wrapper .container table tr:nth-child(odd) {
   background-color: #fff;
 }
-.container table td .active {
+.wrapper .container table td .active {
   color: #46c346;
   font-size: 20px;
 }
-.container table td .disabled {
+.wrapper .container table td .disabled {
   color: red;
   font-size: 20px;
 }
-.container table td .delete {
+.wrapper .container table td .delete {
   padding: 5px 10px;
   border-radius: 5px;
   color: #fff;
@@ -50,10 +71,10 @@ body.no-scroll {
   background-color: rgb(209, 65, 65);
   cursor: pointer;
 }
-.container table td .delete:hover {
+.wrapper .container table td .delete:hover {
   background-color: rgb(137, 40, 40);
 }
-.container table td .disciplines, .container table td .courses {
+.wrapper .container table td .disciplines, .wrapper .container table td .courses {
   padding: 5px 10px;
   border-radius: 5px;
   color: #fff;
@@ -63,10 +84,10 @@ body.no-scroll {
   background-color: #3498db;
   cursor: pointer;
 }
-.container table td .disciplines:hover, .container table td .courses:hover {
+.wrapper .container table td .disciplines:hover, .wrapper .container table td .courses:hover {
   background-color: #0b5c92;
 }
-.container .message {
+.wrapper .container .message {
   position: absolute;
   background-color: #3498db;
   color: #fff;
@@ -74,7 +95,7 @@ body.no-scroll {
   right: 0;
   top: 80px;
 }
-.container .message button {
+.wrapper .container .message button {
   background-color: rgba(242, 234, 234, 0.3411764706);
   border: none;
   padding: 0px 7px 1px 6px;

@@ -8,81 +8,96 @@ body {
     overflow: hidden;
   }
 }
-.container {
-  max-width: 1236px;
-  margin: 0 auto;
-  min-height: calc(100vh - 106px);
-  table {
-    border-collapse: collapse;
-    width: 100%;
-    thead{
-      tr{   
-        background-color: $primary-color !important;
-        color: #fff;
-      }
-    }
-    td,
-    th {
-      border: 1px solid #dddddd;
-      text-align: left;
-      padding: 8px;
-    }
-    tr:nth-child(even) {
-      background-color: #dddddd;
-    }
-    tr:nth-child(odd) {
-      background-color: #fff;
-    }
-    td {
-      .active {
-        color: #46c346;
-        font-size: 20px;
-      }
-      .disabled {
-        color: red;
-        font-size: 20px;
-      }
-      .delete{
-        padding:5px 10px;
-        border-radius: 5px;
-        color: #fff;
-        border: none;
-        transition: .5s;
-        background-color: rgb(209, 65, 65);
-        cursor: pointer;
-        &:hover{
-          background-color: rgb(137, 40, 40);
-        }
-      }
-      .disciplines, .courses{
-        padding:5px 10px;
-        border-radius: 5px;
-        color: #fff;
-        border: none;
-        transition: .5s;
-        background-color: $primary-color;
-        cursor: pointer;
-        &:hover{
-          background-color: $primary-color-dark;
-        }
-      }
-    }
+.wrapper{
+  display: flex;
+  gap: 20px;
+  min-height: calc(100vh - 85px);
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: #fff;
+    width: 230px;
   }
-  .message {
-    position: absolute;
-    background-color: $primary-color;
-    color: #fff;
-    padding: 8px 15px;
-    right: 0;
-    top: 80px;
-    button {
-      background-color: #f2eaea57;
-      border: none;
-      padding: 0px 7px 1px 6px;
-      font-size: 20px;
+
+  .container {
+    max-width: 1236px;
+    margin: 0 auto;
+    min-height: calc(100vh - 106px);
+    padding-right: 20px;
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      thead{
+        tr{   
+          background-color: $primary-color !important;
+          color: #fff;
+        }
+      }
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+      tr:nth-child(odd) {
+        background-color: #fff;
+      }
+      td {
+        .active {
+          color: #46c346;
+          font-size: 20px;
+        }
+        .disabled {
+          color: red;
+          font-size: 20px;
+        }
+        .delete{
+          padding:5px 10px;
+          border-radius: 5px;
+          color: #fff;
+          border: none;
+          transition: .5s;
+          background-color: rgb(209, 65, 65);
+          cursor: pointer;
+          &:hover{
+            background-color: rgb(137, 40, 40);
+          }
+        }
+        .disciplines, .courses{
+          padding:5px 10px;
+          border-radius: 5px;
+          color: #fff;
+          border: none;
+          transition: .5s;
+          background-color: $primary-color;
+          cursor: pointer;
+          &:hover{
+            background-color: $primary-color-dark;
+          }
+        }
+      }
+    }
+    .message {
+      position: absolute;
+      background-color: $primary-color;
       color: #fff;
-      border-radius: 100%;
-      cursor: pointer;
+      padding: 8px 15px;
+      right: 0;
+      top: 80px;
+      button {
+        background-color: #f2eaea57;
+        border: none;
+        padding: 0px 7px 1px 6px;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 100%;
+        cursor: pointer;
+      }
     }
   }
 }
